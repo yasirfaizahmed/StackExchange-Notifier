@@ -29,4 +29,4 @@ jobs:
       - name: print vars
         run: echo "${{env.TO_MAIL}}"
       - name: print sec
-        run: echo "${{secrets.APP_PASSWORD}}"
+        run: echo "${{env.APP_PASSWORD}}"

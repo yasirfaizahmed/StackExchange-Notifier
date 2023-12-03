@@ -18,8 +18,9 @@ jobs:
         python-version: ["3.10"]
     steps:
       - uses: yasirfaizahmed/StackExchange-Notifier@master    # This repo is good :)
-        env:
+        with:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
+        env:
           TO_MAIL: ${{ secrets.TO_MAIL }}
           APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
           FROM_MAIL: ${{ secrets.FROM_MAIL }}

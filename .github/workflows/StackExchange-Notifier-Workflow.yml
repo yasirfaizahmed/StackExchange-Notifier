@@ -29,4 +29,4 @@ jobs:
       - name: print vars
         run: echo $FROM_MAIL
       - name: context
-        run: echo "$GITHUB_CONTEXT"
+        run: echo ${{GITHUB_CONTEXT}}

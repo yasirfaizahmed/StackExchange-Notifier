@@ -3,15 +3,24 @@ name: StackExchange-Notifier
 on:
   schedule:
     # Runs at 12am IST
-    - cron: '30 18 * * *'
+    - cron: '10 15 * * *'
   workflow_dispatch:
 jobs:
   StackExchange-Notifier:
     name: StackExchange-Notifier
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        python-version: ["3.10"]
     steps:
       - uses: yasirfaizahmed/StackExchange-Notifier@master    # This repo is good :)
         with:
           TO_MAIL: ${{ secrets.TO_MAIL }}
           APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
           FROM_MAIL: ${{ secrets.FROM_MAIL }}
+      - name: Install Dependencies
+        run: python -m pip install -r requirements.txt
+      - name: Run the code
+        run: python main.py
+        
+          

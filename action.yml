@@ -1,4 +1,4 @@
-name: 'StackExchange-Notifier'
+name: 'StackExchange-Notifier action file'
 author: Yasir Faiz Ahmed
 description: 'Notifies the user StackOverflow questions asked globally for the tags provided so one can increase there reputation by answering it ASAP!'
 

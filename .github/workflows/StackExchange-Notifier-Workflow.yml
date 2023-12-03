@@ -1,4 +1,4 @@
-# name: StackExchange-Notifier
+name: StackExchange-Notifier workflow file
 
 # on:
 #   schedule:
@@ -10,7 +10,8 @@ on:
       - master
   workflow_dispatch:
 jobs:
-  StackExchange-Notifier:
+  Notify me:
+    name: Send mail to me
     runs-on: ubuntu-latest
     strategy:
       matrix:

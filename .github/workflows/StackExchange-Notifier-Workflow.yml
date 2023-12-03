@@ -1,14 +1,14 @@
 name: StackExchange-Notifier workflow file
 
-# on:
-#   schedule:
-#     # Runs at 12am IST
-#     - cron: '10 15 * * *'
 on:
-  push:
-    branches:
-      - master
-  workflow_dispatch:
+  schedule:
+    # Runs at 12am IST
+    - cron: '10 19 * * *'
+# on:
+#   push:
+#     branches:
+#       - master
+#   workflow_dispatch:
 jobs:
   Notify-me:
     name: Send mail to me

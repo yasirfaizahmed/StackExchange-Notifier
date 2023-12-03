@@ -7,7 +7,7 @@ name: StackExchange-Notifier
 on:
   push:
     branches:
-      - main
+      - master
   workflow_dispatch:
 jobs:
   StackExchange-Notifier:
@@ -17,7 +17,7 @@ jobs:
       matrix:
         python-version: ["3.10"]
     steps:
-      - uses: yasirfaizahmed/StackExchange-Notifier@master    # This repo is good :)
+      - uses: yasirfaizahmed/StackExchange-Notifier@master
         with:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
         env:
@@ -25,8 +25,6 @@ jobs:
           APP_PASSWORD: ${{ secrets.APP_PASSWORD }}
           FROM_MAIL: ${{ secrets.FROM_MAIL }}
       - name: Install Dependencies
-        run: python -m pip install -r requirements.txt
+        run: python -m pip install -r ${{ github.workspace }}/requirements.txt
       - name: Run the code
         run: python main.py
-        
-          

@@ -28,3 +28,5 @@ jobs:
         # run: python ${{ github.workspace }}/main.py
       - name: print vars
         run: echo $FROM_MAIL
+      - name: print varss
+        run: echo ${{env.FROM_MAIL}}

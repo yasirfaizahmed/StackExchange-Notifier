@@ -10,7 +10,7 @@ on:
       - master
   workflow_dispatch:
 jobs:
-  Notify me:
+  Notify-me:
     name: Send mail to me
     runs-on: ubuntu-latest
     strategy:

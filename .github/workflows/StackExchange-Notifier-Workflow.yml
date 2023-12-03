@@ -26,5 +26,5 @@ jobs:
           FROM_MAIL: ${{ secrets.FROM_MAIL }}
       - name: Install Dependencies
         run: python -m pip install -r ${{ github.workspace }}/requirements.txt
-      # - name: Run the code
-        # run: python ${{ github.workspace }}/main.py
+      - name: Run the code
+        run: python ${{ github.workspace }}/main.py

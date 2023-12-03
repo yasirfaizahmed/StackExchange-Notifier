@@ -18,15 +18,15 @@ jobs:
         python-version: ["3.10"]
     steps:
       - uses: actions/checkout@v3
-        # env:
-        #   TO_MAIL: ${{ vars.TO_MAIL }}
-        #   APP_PASSWORD: ${{ vars.APP_PASSWORD }}
-        #   FROM_MAIL: ${{ vars.FROM_MAIL }}
+        env:
+          TO_MAIL: ${{ vars.TO_MAIL_v }}
+          APP_PASSWORD: ${{ secrets.APP_PASSWORD_v }}
+          FROM_MAIL: ${{ vars.FROM_MAIL_v }}
       - name: Install Dependencies
         run: python -m pip install -r ${{ github.workspace }}/requirements.txt
       # - name: Run the code
         # run: python ${{ github.workspace }}/main.py
       - name: print vars
-        run: echo "${{vars.VAR_1}}"
+        run: echo "${{env.TO_MAIL}}"
       - name: print sec
         run: echo "${{secrets.APP_PASSWORD}}"

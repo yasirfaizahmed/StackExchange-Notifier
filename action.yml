@@ -1,0 +1,18 @@
+name: 'StackExchange-Notifier'
+author: Yasir Faiz Ahmed
+description: 'Notifies the user StackOverflow questions asked globally for the tags provided so one can increase there reputation by answering it ASAP!'
+
+inputs:
+  GH_TOKEN:
+    description: 'GitHub access token with Repo scope'
+    required: true
+    default: ${{ github.token }}
+
+runs:
+  using: 'docker'
+  image: 'python:3.8'
+  entrypoint: 'sh'
+  args:
+    - '-c'
+    - |
+      python main.py

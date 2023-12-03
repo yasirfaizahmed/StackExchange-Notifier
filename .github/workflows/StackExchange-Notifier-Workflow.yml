@@ -1,9 +1,13 @@
 name: StackExchange-Notifier
 
+# on:
+#   schedule:
+#     # Runs at 12am IST
+#     - cron: '10 15 * * *'
 on:
-  schedule:
-    # Runs at 12am IST
-    - cron: '10 15 * * *'
+  push:
+    branches:
+      - main
   workflow_dispatch:
 jobs:
   StackExchange-Notifier:

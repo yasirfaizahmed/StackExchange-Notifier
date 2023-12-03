@@ -11,8 +11,3 @@ inputs:
 runs:
   using: 'docker'
   image: 'python:3.8'
-  entrypoint: 'sh'
-  args:
-    - '-c'
-    - |
-      python main.py

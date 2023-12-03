@@ -27,4 +27,4 @@ jobs:
       # - name: Run the code
         # run: python ${{ github.workspace }}/main.py
       - name: print vars
-        run: echo $VAR_1
+        run: echo "${{vars.VAR_1}}"

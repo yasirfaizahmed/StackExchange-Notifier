@@ -24,9 +24,9 @@ jobs:
       - uses: actions/checkout@v3
       - name: Install Dependencies
         run: python -m pip install -r ${{ github.workspace }}/requirements.txt
-      # - name: Run the code
-        # run: python ${{ github.workspace }}/main.py
-      - name: print vars
-        run: echo "${{env.TO_MAIL}}"
-      - name: print sec
-        run: echo "${{env.APP_PASSWORD}}"
+      - name: Run the code
+        run: python ${{ github.workspace }}/main.py
+      # - name: print vars
+      #   run: echo "${{env.TO_MAIL}}"
+      # - name: print sec
+      #   run: echo "${{env.APP_PASSWORD}}"

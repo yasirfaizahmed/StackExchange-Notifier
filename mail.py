@@ -11,8 +11,8 @@ def compose_email(date: str, message: str):
   {message}
 
   """
-  GMAIL_USERNAME = os.environ.get('FROM_MAIL')   # "professorsnipexd@gmail.com"
-  GMAIL_APP_PASSWORD = os.environ.get('APP_PASSWORD')  # "xrwiszrvgqbpjvpm"
+  GMAIL_USERNAME = os.environ.get('FROM_MAIL')
+  GMAIL_APP_PASSWORD = os.environ.get('APP_PASSWORD')
 
   recipients = ["{}".format(os.environ.get('TO_MAIL'))]
   msg = MIMEText(email_text)

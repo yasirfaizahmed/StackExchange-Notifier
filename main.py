@@ -65,8 +65,8 @@ class StackExchangeNotifier():
       return
 
     data = json.loads(response.content)
-    question_template = QuestionData().__dict__
     for question in data.get('items'):
+      question_template = QuestionData().__dict__
       for key, value in question.items():
         question_template.update({key: value}) if key in question_template else None
       self.question_data.append(question_template)

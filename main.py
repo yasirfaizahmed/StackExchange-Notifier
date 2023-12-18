@@ -6,6 +6,7 @@ import typing as t
 import json
 import os
 from urllib.parse import urlencode
+import pandas
 
 from mail import compose_email
 
@@ -72,7 +73,11 @@ class StackExchangeNotifier():
       self.question_data.append(question_template)
 
     # print(self.question_data)
-    compose_email(date=str(datetime.date.today()), message=self.question_data)
+    message = pandas.DataFrame(self.question_data)
+    message = message.fillna(' ').T
+    message = message.to_html()
+
+    compose_email(date=str(datetime.date.today()), message=message)
 
   def form_url(self):
     non_null_params = {}
